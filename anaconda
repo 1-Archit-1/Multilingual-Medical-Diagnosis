@@ -1,0 +1,2 @@
+echo "module load anaconda3"
+echo "conda activate ./conda/LLM_test"

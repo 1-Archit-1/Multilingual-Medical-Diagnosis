@@ -48,7 +48,7 @@ LANG_TOKEN_MAPPING = {
     'en': ''
 }
 max_seq_len = 25
-
+last_print_time = time.time()
 start_times = {}
 
 # Generic Helper functions (May not be needed!)

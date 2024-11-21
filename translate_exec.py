@@ -1,4 +1,4 @@
-SHOULD_TRAIN = False
+#SHOULD_TRAIN = False
 SHOULD_TRAIN = True
 
 import os
@@ -72,6 +72,7 @@ from translate_codebase import (
 def mbart_eng_hindi():
 
     global model_path
+    global last_print_time
 
     api = read_token_and_login('hf_token')
 
@@ -92,21 +93,24 @@ def mbart_eng_hindi():
     evaluate_translations_meteor(test_data, translated_test_data_untuned, original_tokenizer, src_lang='en', tgt_lang='hi')
     clock_end("translation_testing_untuned_1")
 
-    global last_print_time; last_print_time = time.time()
+    
+    last_print_time = time.time()
 
     tokenized_datasets = small_data_set.map(lambda examples: preprocess_function_mbart(examples, original_tokenizer, src_lang='en', tgt_lang='hi'), batched=True, remove_columns=["translation"])
 
+    
     clock_begin("fine_tuning_1")
     if SHOULD_TRAIN == True:
         trainer = prepare_model_for_training_mbart(original_model, original_tokenizer, tokenized_datasets)
 
         fine_tune_and_save_mbart(trainer, original_model, original_tokenizer, output_dir=model_path+"./mbart_fine_tuned_eng_hin")
     clock_end("fine_tuning_1")
+    
 
     model, tokenizer = load_fine_tuned_model_mbart(model_path+"./mbart_fine_tuned_eng_hin")
 
     input_text = "Stop in the name of the law"
-    translated_text = translate_text_mbart(model, tokenizer, input_text, src_lang='en', tgt_lang='hi')
+    translated_text = translate_text_mbart(model, tokenizer, input_text, src_lang='en_XX', tgt_lang='hi_IN')
 
 
     clock_begin("translation_testing_finetuned_1")
@@ -126,6 +130,7 @@ def mbart_eng_hindi():
 def mbart_hindi_eng():
 
     global model_path
+    global last_print_time
 
     api = read_token_and_login('hf_token')
 
@@ -146,7 +151,7 @@ def mbart_hindi_eng():
     evaluate_translations_meteor(test_data, translated_test_data_untuned, original_tokenizer, src_lang='hi', tgt_lang='en')
     clock_end("translation_testing_untuned_2")
 
-    global last_print_time; last_print_time = time.time()
+    last_print_time = time.time()
 
     tokenized_datasets = small_data_set.map(lambda examples: preprocess_function_mbart(examples, original_tokenizer, src_lang='hi', tgt_lang='en'), batched=True, remove_columns=["translation"])
 
@@ -160,7 +165,7 @@ def mbart_hindi_eng():
     model, tokenizer = load_fine_tuned_model_mbart(model_path+"./mbart_fine_tuned_hin_eng")
 
     input_text = "कानून के नाम पर रुकें"
-    translated_text = translate_text_mbart(model, tokenizer, input_text, src_lang='hi', tgt_lang='en')
+    translated_text = translate_text_mbart(model, tokenizer, input_text, src_lang='hi_IN', tgt_lang='en_XX')
 
 
     clock_begin("translation_testing_finetuned_2")
@@ -188,15 +193,17 @@ def mt5_eng_hindi():
     model, tokenizer = get_pretrained_mt5_small()
     sorted_vocab = config_mt5_small(tokenizer, model, LANG_TOKEN_MAPPING)
 
+    
     clock_begin("fine_tuning_3")
     if SHOULD_TRAIN == True:
         fine_tune_and_save_model_mt5_small(model, tokenizer, small_data_set['train'], small_data_set['validation'], LANG_TOKEN_MAPPING, model_path + './mt5_small_fine_tuned_eng_hindi', src_lang='en', tgt_lang='hi')
 
         #Not neeeded
-        save_fine_tuned_model_mt5_small(model, tokenizer, model_path + './mt5_small_fine_tune_eng_hindi')
+        save_fine_tuned_model_mt5_small(model, tokenizer, model_path + './mt5_small_fine_tuned_eng_hindi')
     clock_end("fine_tuning_3")
+    
 
-    model, tokenizer = load_fine_tuned_model_mt5_small(model_path + './mt5_small_fine_tune_eng_hindi')
+    model, tokenizer = load_fine_tuned_model_mt5_small(model_path + './mt5_small_fine_tuned_eng_hindi')
 
     test_sentence = "Stop in the name of the law"
     print('Raw input text:', test_sentence)
@@ -214,7 +221,7 @@ def mt5_eng_hindi():
     clock_begin("translation_testing_finetuned_3")
     test_data, tokenized_test_data = prepare_test_data(small_data_set, tokenizer, num_examples=100, src_lang='en')
 
-    translated_test_data = perform_translation_testing(model, tokenizer, test_data, tokenized_test_data, src_lang="en", target_lang="hi", model_type="mt5_small")
+    translated_test_data = perform_translation_testing(model, tokenizer, test_data, tokenized_test_data, src_lang="en", tgt_lang="hi", model_type="mt5_small")
 
     evaluate_translations_bertscore(test_data, translated_test_data, src_lang='en', tgt_lang='hi', bert_lang='hi')
     evaluate_translations_bleu(test_data, translated_test_data, tokenizer, src_lang='en', tgt_lang='hi')
@@ -224,7 +231,7 @@ def mt5_eng_hindi():
 
 
 def mt5_hindi_eng():
-    
+
     global model_path
     global LANG_TOKEN_MAPPING
 
@@ -262,7 +269,7 @@ def mt5_hindi_eng():
     clock_begin("translation_testing_finetuned_4")
     test_data, tokenized_test_data = prepare_test_data(small_data_set, tokenizer, num_examples=100, src_lang='hi')
 
-    translated_test_data = perform_translation_testing(model, tokenizer, test_data, tokenized_test_data, src_lang="hi", target_lang="en", model_type="mt5_small")
+    translated_test_data = perform_translation_testing(model, tokenizer, test_data, tokenized_test_data, src_lang="hi", tgt_lang="en", model_type="mt5_small")
 
     evaluate_translations_bertscore(test_data, translated_test_data, src_lang='hi', tgt_lang='en', bert_lang='en')
     evaluate_translations_bleu(test_data, translated_test_data, tokenizer, src_lang='hi', tgt_lang='en')
@@ -277,13 +284,13 @@ def main():
     Main function to orchestrate fine-tuning and testing.
     """
     print("Running the mbart_eng_hindi() function")
-    mbart_eng_hindi()
+    #mbart_eng_hindi()
     print("Running the mbart_hindi_eng() function")
     mbart_hindi_eng()
     print("Running the mt5_eng_hindi() function")
-    mt5_eng_hindi()
+    #mt5_eng_hindi()
     print("Running the mt5_hindi_eng() function")
-    mt5_hindi_eng()
+    #mt5_hindi_eng()
 
 
 

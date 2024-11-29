@@ -1,5 +1,5 @@
-SHOULD_TRAIN = False
-#SHOULD_TRAIN = True
+#SHOULD_TRAIN = False
+SHOULD_TRAIN = True
 
 import os
 import time
@@ -14,7 +14,7 @@ token=""
 print(os.environ['WANDB_DISABLED'])  # Should output "true"
 print(os.environ['HF_HOME'])  # Should output "~/scratch/hf-cache"
 
-output_file = open('logger_exec.log', 'w')
+output_file = open('logger_2.log', 'w')
 sys.stdout = output_file
 sys.stderr = output_file
 
@@ -286,9 +286,9 @@ def main():
     print("Running the mbart_eng_hindi() function")
     #mbart_eng_hindi()
     print("Running the mbart_hindi_eng() function")
-    #mbart_hindi_eng()
+    mbart_hindi_eng()
     print("Running the mt5_eng_hindi() function")
-    mt5_eng_hindi()
+    #mt5_eng_hindi()
     print("Running the mt5_hindi_eng() function")
     #mt5_hindi_eng()
 

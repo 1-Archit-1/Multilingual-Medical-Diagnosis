@@ -33,14 +33,14 @@ def generate_text_mis(model,tokenizer, text, max_length,alpaca_prompt):
 def inference_mis(text:str, max_length:int = 256):
     alpaca_prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
-    ### Instruction:
-    {}
+### Instruction:
+{}
 
-    ### Input:
-    {}
+### Input:
+{}
 
-    ### Response:
-    {}"""
+### Response:
+{}"""
     model,tokenizer = load_model_mis()
     return generate_text_mis(model,tokenizer,text,max_length,alpaca_prompt)
 

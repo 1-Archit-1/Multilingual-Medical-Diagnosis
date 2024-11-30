@@ -77,6 +77,7 @@ import torch
 from team_files.akshay import getDiagnosisLlama
 from team_files.aditya import load_unsloth_model_and_tokenizer_phi, generate_diagnosis_phi
 from team_files.archit import load_model_mis, generate_text_mis, inference_mis
+from team_files.ensemble import ensemble_responses
 
 #from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -371,8 +372,19 @@ def process_translated_text_and_get_diagnosis_mistral(translated_text):
     model, tokenizer = load_model_mis()
 
     # Pass the combined text to the Medical LLM and get the diagnosis
-    diagnosis = inference_mis(combined_text, max_length=512)
-    return diagnosis
+    full_response , diagnosis_json = inference_mis(combined_text, max_length=512)
+    return full_response, diagnosis_json
+
+def format_for_ensemble(mistral_json, llama_json, phi_json):
+    outputs = {
+        'mistral' :mistral_diagnosis_json,
+        'llama': 
+        'phi': {
+            'most_likely': 'Anemia',
+            'differential': ['HIV (initial infection)', 'Anemia', 'Pancreatic neoplasm', 'Chostochondritis']
+        },
+    }
+    return outputs
 
 def demo():
     print("starting demo")
@@ -393,10 +405,19 @@ def demo():
     diagnosis_unsloth = process_translated_text_and_get_diagnosis_unsloth(translated_text)
     print("Diagnosis (Unsloth):", diagnosis_unsloth)
     print("Calling MEDICAL LLM (Mistral)")
-    diagnosis_mistral = process_translated_text_and_get_diagnosis_mistral(translated_text)
+    diagnosis_mistral, mistral_diagnosis_json  = process_translated_text_and_get_diagnosis_mistral(translated_text)
     print("Diagnosis (Mistral):", diagnosis_mistral)
     print("Translating to Hindi")
     translate_sample_to_hindi(diagnosis,diagnosis_unsloth, diagnosis_mistral)
+
+    # Set up random responses for now, but expect these from the model functions
+    llama_json = {'most_likely': 'XYZ','differential': ['HIV (initial infection)', 'Colitis', 'jaundice']}
+    phi_json = {'most_likely': 'XYZ','differential': ['HIV (initial infection)', 'Colitis', 'jaundice']}
+
+    model_outputs = format_for_ensemble(mistral_diagnosis_json, llama_json, phi_json)
+    print("Final Response: ")
+    print(ensemble_responses(model_outputs))
+
 
     
 

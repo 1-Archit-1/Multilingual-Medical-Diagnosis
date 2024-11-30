@@ -347,8 +347,8 @@ def process_translated_text_and_get_diagnosis_unsloth(translated_text):
     model, tokenizer = load_unsloth_model_and_tokenizer_phi(model_path, use_safetensors=True)
 
     # Pass the combined text to the Medical LLM and get the diagnosis
-    diagnosis = generate_diagnosis_phi(model, tokenizer, combined_text)
-    return diagnosis
+    diagnosis, diagnosis_json= generate_diagnosis_phi(model, tokenizer, combined_text)
+    return diagnosis,diagnosis_json
 
 
 def process_translated_text_and_get_diagnosis_mistral(translated_text):
@@ -401,8 +401,8 @@ def demo():
     print("Calling MEDICAL LLM (Llama)")
     diagnosis = process_translated_text_and_get_diagnosis_llama(translated_text)
     print("Diagnosis:", diagnosis)
-    print("Calling MEDICAL LLM (Unsloth)")
-    diagnosis_unsloth = process_translated_text_and_get_diagnosis_unsloth(translated_text)
+    print("Calling MEDICAL LLM (PHI)")
+    diagnosis_unsloth, phi_json = process_translated_text_and_get_diagnosis_unsloth(translated_text)
     print("Diagnosis (Unsloth):", diagnosis_unsloth)
     print("Calling MEDICAL LLM (Mistral)")
     diagnosis_mistral, mistral_diagnosis_json  = process_translated_text_and_get_diagnosis_mistral(translated_text)

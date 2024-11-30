@@ -1,7 +1,7 @@
 from unsloth import FastLanguageModel
 def load_model_mis():
     model, tokenizer = FastLanguageModel.from_pretrained(
-            model_name = 'rhaegar1O1/mistral-ddx-v1',
+            model_name = 'rhaegar1O1/mistral-ddx-v2',
             max_seq_length = 1024,
             dtype = None,
             load_in_4bit = True,

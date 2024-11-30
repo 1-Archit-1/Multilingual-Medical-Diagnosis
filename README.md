@@ -36,6 +36,7 @@ conda env create -f environment.yml conda activate <environment_name>
 ## References
 - `Multilingual NMT with mT5: https://github.com/ejmejm/multilingual-nmt-mt5/blob/main/nmt_full_version.ipynb`
 - `LING-380 Final Project: https://github.com/zhangmegan/LING-380-Final-Project/tree/9d9bb07fcfcf05fa45942276de5af1265b4f3701/japanese_turkish_finetuning.py`
+- ` https://colab.research.google.com/drive/1lN6hPQveB_mHSnTOYifygFcrO8C1bxq4?usp=sharing#scrollTo=r2v_X2fA0Df5
 
 ## License
 This project is licensed under the MIT License.

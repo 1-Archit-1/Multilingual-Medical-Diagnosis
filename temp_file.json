@@ -1,15 +1,19 @@
 [
     [
-        "The age of the patient is 47, male",
-        "History: In the last year I had a flare - up of chronic obstructive respiratory disease (COPD) once or several times.",
+        "The age of the patient is 36 years, female",
+        "History: I have severe chronic obstructive pulmonary disease (COPD)",
+        "In the last year I had a seizure of chronic obstructive respiratory disease (COPD).",
         "I smoke.",
-        "I have chronic obstructive pulmonary disease (COPD).",
-        "I was diagnosed with gastrosophage reflex.",
+        "I have a chronic obstructive respiratory disease (COPD).",
+        "I was diagnosed with gastroesophageal reflux at any time.",
         "I work in agriculture.",
+        "I work in construction.",
         "I work in the mining sector.",
-        "I have not been out of the country in the last four weeks.",
-        "Symptoms: When I breathe out, I hear the sound of breathing.",
+        "I haven 't been out of the country in the last four weeks",
+        "Symptoms: I have cough.",
         "I felt adequate respiratory deficiency or difficulty breathing.",
+        "A cough that usually produces a colorful or excessive amount of sputum.",
+        "The cough",
         "When I breathe out, I hear the sound of breathing."
     ]
 ]

@@ -71,7 +71,7 @@ from translate_codebase import (
 )
 
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast, AutoTokenizer, AutoModelForSeq2SeqLM
-
+from unsloth import FastLanguageModel
 import torch
 
 from team_files.akshay import getDiagnosisLlama
@@ -397,7 +397,7 @@ def process_translated_text_and_get_diagnosis_mistral(translated_text):
 
 def format_for_ensemble(mistral_json, llama_json, phi_json):
     outputs = {
-        'mistral' :mistral_diagnosis_json,
+        'mistral' :mistral_json,
         'llama': llama_json,
         'phi': phi_json,
     }

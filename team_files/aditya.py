@@ -1,3 +1,4 @@
+from unsloth import FastLanguageModel
 '''
 def load_unsloth_model_and_tokenizer(model_path):
     model, tokenizer = FastLanguageModel.from_pretrained(

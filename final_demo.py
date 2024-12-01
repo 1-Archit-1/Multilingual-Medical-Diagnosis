@@ -71,12 +71,12 @@ from translate_codebase import (
 )
 
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast, AutoTokenizer, AutoModelForSeq2SeqLM
-
 import torch
 
 from team_files.akshay import getDiagnosisLlama
 from team_files.aditya import load_unsloth_model_and_tokenizer_phi, generate_diagnosis_phi
 from team_files.archit import load_model_mis, generate_text_mis, inference_mis
+from team_files.ensemble import ensemble_responses
 
 #from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -280,6 +280,26 @@ def translate_sample_to_english(sample_input):
     #print("Translated text:", translated_text)
     return translated_data
 
+
+def translate_single_sample_to_hindi(diagnosis):
+    # Wrap the sample input in a list of lists to use with translate_sentences_generic
+    input_lists = [[diagnosis]]
+    output_file = "temp_file_2.json"
+    
+    # Translate the sample input back to English
+    translate_sentences_generic(input_lists, output_file, src_lang="en_XX", tgt_lang="hi_IN", model_type="mbart", direction="eng_hin")
+    
+    # Load the translated text from the output file
+    with open(output_file, 'r', encoding='utf-8') as f:
+        translated_data = json.load(f)
+    
+    # Extract the translated text
+    print("translated data: ", translated_data)
+    #translated_text = translated_data
+    #print("Translated text:", translated_text)
+    return translated_data
+
+
 # Function to translate a sample input back to English
 def translate_sample_to_hindi(diagnosis,diagnosis_unsloth, diagnosis_mistral):
     # Wrap the sample input in a list of lists to use with translate_sentences_generic
@@ -318,8 +338,8 @@ def process_translated_text_and_get_diagnosis_llama(translated_text):
     print(f"Combined text: {combined_text}")
 
     # Pass the combined text to the Medical LLM and get the diagnosis
-    diagnosis = getDiagnosisLlama(combined_text)
-    return diagnosis
+    diagnosis, diagnosis_json = getDiagnosisLlama(combined_text)
+    return diagnosis, diagnosis_json
 
 
 
@@ -346,8 +366,8 @@ def process_translated_text_and_get_diagnosis_unsloth(translated_text):
     model, tokenizer = load_unsloth_model_and_tokenizer_phi(model_path, use_safetensors=True)
 
     # Pass the combined text to the Medical LLM and get the diagnosis
-    diagnosis = generate_diagnosis_phi(model, tokenizer, combined_text)
-    return diagnosis
+    diagnosis, diagnosis_json= generate_diagnosis_phi(model, tokenizer, combined_text)
+    return diagnosis,diagnosis_json
 
 
 def process_translated_text_and_get_diagnosis_mistral(translated_text):
@@ -371,8 +391,16 @@ def process_translated_text_and_get_diagnosis_mistral(translated_text):
     model, tokenizer = load_model_mis()
 
     # Pass the combined text to the Medical LLM and get the diagnosis
-    diagnosis = inference_mis(combined_text, max_length=512)
-    return diagnosis
+    full_response , diagnosis_json = inference_mis(combined_text, max_length=512)
+    return full_response, diagnosis_json
+
+def format_for_ensemble(mistral_json, llama_json, phi_json):
+    outputs = {
+        'mistral' :mistral_json,
+        'llama': llama_json,
+        'phi': phi_json,
+    }
+    return outputs
 
 def demo():
     print("starting demo")
@@ -387,16 +415,28 @@ def demo():
     print("Translating to English")
     translated_text = translate_sample_to_english(test_input)
     print("Calling MEDICAL LLM (Llama)")
-    diagnosis = process_translated_text_and_get_diagnosis_llama(translated_text)
+    diagnosis,llama_diagnosis_json = process_translated_text_and_get_diagnosis_llama(translated_text)
     print("Diagnosis:", diagnosis)
-    print("Calling MEDICAL LLM (Unsloth)")
-    diagnosis_unsloth = process_translated_text_and_get_diagnosis_unsloth(translated_text)
+    print("Calling MEDICAL LLM (PHI)")
+    diagnosis_unsloth, phi_json = process_translated_text_and_get_diagnosis_unsloth(translated_text)
     print("Diagnosis (Unsloth):", diagnosis_unsloth)
     print("Calling MEDICAL LLM (Mistral)")
-    diagnosis_mistral = process_translated_text_and_get_diagnosis_mistral(translated_text)
+    diagnosis_mistral, mistral_diagnosis_json  = process_translated_text_and_get_diagnosis_mistral(translated_text)
     print("Diagnosis (Mistral):", diagnosis_mistral)
-    print("Translating to Hindi")
-    translate_sample_to_hindi(diagnosis,diagnosis_unsloth, diagnosis_mistral)
+    # print("Translating to Hindi")
+    # translate_sample_to_hindi(diagnosis,diagnosis_unsloth, diagnosis_mistral)
+
+    # Set up random responses for now, but expect these from the model functions
+    #llama_json = {'most_likely': 'XYZ','differential': ['HIV (initial infection)', 'Colitis', 'jaundice']}
+    #phi_json = {'most_likely': 'XYZ','differential': ['HIV (initial infection)', 'Colitis', 'jaundice']}
+    
+    model_outputs = format_for_ensemble(mistral_diagnosis_json, llama_diagnosis_json, phi_json)
+    print("Final English Response: ")
+    ensembled = ensemble_responses(model_outputs)
+    print(ensembled)
+    translated_final = translate_single_sample_to_hindi(ensembled)
+    print(f'Final Hindi Response {translated_final}')
+
 
     
 

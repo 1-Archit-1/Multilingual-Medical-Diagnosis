@@ -36,9 +36,9 @@ token=""
 print(os.environ['WANDB_DISABLED'])  # Should output "true"
 print(os.environ['HF_HOME'])  # Should output "~/scratch/
 
-output_file = open('logger.log', 'w')
-sys.stdout = output_file
-sys.stderr = output_file
+#output_file = open('logger.log', 'w')
+#sys.stdout = output_file
+#sys.stderr = output_file
 
 nltk.data.path.append('./nltk_data')
 nltk.download('all', download_dir='./nltk_data')

@@ -6,52 +6,38 @@ O^O/ \_/ \    Torch: 2.5.1+cu124. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.1.0
 \        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
  "-____-"     Free Apache license: http://github.com/unslothai/unsloth
 Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+/storage/ice1/1/2/spadmanabha3/satkp/BigData/LLM/conda/LLM_TEST_2/lib/python3.10/site-packages/accelerate/utils/modeling.py:1390: UserWarning: Current model requires 109051904.0 bytes of buffer for offloaded layers, which seems does not fit any GPU's remaining memory. If you are experiencing a OOM later, please consider using offload_buffers=True.
+  warnings.warn(
+==((====))==  Unsloth 2024.11.11: Fast Mistral patching. Transformers:4.46.3.
+   \\   /|    GPU: NVIDIA A100 80GB PCIe. Max memory: 79.256 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.5.1+cu124. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.1.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+==((====))==  Unsloth 2024.11.11: Fast Mistral patching. Transformers:4.46.3.
+   \\   /|    GPU: NVIDIA A100 80GB PCIe. Max memory: 79.256 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.5.1+cu124. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.1.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
 starting demo
 getting inputs
 25
 Choosing 1 random input :  6  from 25 inputs
 ['रोगी का आयु 9 है, लिंग F है', 'पूर्वजः क्या आपने पिछले 7 दिनों में कोई भी प्रतिद्वंद्वी औषधि शुरू की है या ली है? हाँ', 'क्या आप नियमित रूप से उत्तेजक दवाएं लेते हैं? हाँ', 'क्या आप हाल ही में खुजली, उत्तेजना, मदहोशी या आक्रामक व्यवहार के लिए अस्पताल में उपचार किया गया है और एक अंतःशिरागत या अंतःमांसपेशीय मार्ग के माध्यम से दवाएं प्राप्त की गई हैं? हाँ', 'क्या आपने पिछले 4 हफ्ते में देश से बाहर यात्रा की है? नहीं', 'लक्षणः क्या आपके मुंह में जिह्वा रखने में आपको परेशानी होती है? हाँ', 'क्या आप पर्याप्त मात्रा में श्वसन की कमी या श्वसन में कठिनाई महसूस कर रहे हैं? हाँ', 'क्या आपने कभी ऐसा महसूस किया है जैसे आप बहुत ही कम समय तक साँस लेने या बोलने में असमर्थ रहे हों? हाँ', 'क्या आपके जीभ को अपने मुंह में रखने में कठिनाई है? हाँ', 'क्या अचानक आपके मुंह को खोलने में कठिनाई या अक्षमता या जब इसे खोलते हैं तो आपको दाँत दर्द होता है? हाँ']
 Translating to English
-translated data:  [["Patient 's age 9, gender F", 'Earlier: Have you taken any competing drugs in the last 7 days? Yes.', 'Do you take stimulants regularly? Yes', 'Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes', 'Have you travelled outside the country in the last 4 weeks? No', 'Symptoms: Do you have any trouble keeping your mouth shut? Yes.', 'Are you feeling adequate respiratory distress or difficulty breathing? Yes', 'Have you ever felt unable to breathe or speak for very short periods of time? Yes', 'Is it difficult to hold your tongue in your mouth? Yes.', 'Did you suddenly find it difficult or impossible to open your mouth, or did you get gum pain when you opened it? Yes.']]
+translated data:  [["Patient 's age 9, gender F", 'Earlier: Have you taken any competing drugs in the last 7 days? Yes.', 'Do you take stimulants regularly? Yes', 'Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes', 'Have you travelled outside the country in the last 4 weeks? No', 'Symptoms: Do you have any trouble keeping your mouth shut? Yes.', 'Are you feeling adequate respiratory distress or difficulty breathing? Yes', 'Have you ever felt unable to breathe or speak for very short periods of time? Yes', 'Is it difficult to hold your tongue in your mouth? Yes.', 'Do you suddenly find it difficult or impossible to open your mouth, or do you get gum pain when you open it? Yes.']]
 Calling MEDICAL LLM (Llama)
-Combined text: Patient 's age 9, gender F Earlier: Have you taken any competing drugs in the last 7 days? Yes. Do you take stimulants regularly? Yes Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes Have you travelled outside the country in the last 4 weeks? No Symptoms: Do you have any trouble keeping your mouth shut? Yes. Are you feeling adequate respiratory distress or difficulty breathing? Yes Have you ever felt unable to breathe or speak for very short periods of time? Yes Is it difficult to hold your tongue in your mouth? Yes. Did you suddenly find it difficult or impossible to open your mouth, or did you get gum pain when you opened it? Yes.
+Combined text: Patient 's age 9, gender F Earlier: Have you taken any competing drugs in the last 7 days? Yes. Do you take stimulants regularly? Yes Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes Have you travelled outside the country in the last 4 weeks? No Symptoms: Do you have any trouble keeping your mouth shut? Yes. Are you feeling adequate respiratory distress or difficulty breathing? Yes Have you ever felt unable to breathe or speak for very short periods of time? Yes Is it difficult to hold your tongue in your mouth? Yes. Do you suddenly find it difficult or impossible to open your mouth, or do you get gum pain when you open it? Yes.
 Loading the model...
 Model loaded successfully!
-Unloading the model to save memory...
-Model unloaded successfully!
-Diagnosis: Differential diagnosis is: Whooping cough, Bronchitis, Pneumonia and the Disease can be Whooping cough 
-Calling MEDICAL LLM (Unsloth)
-Combined text: Patient 's age 9, gender F Earlier: Have you taken any competing drugs in the last 7 days? Yes. Do you take stimulants regularly? Yes Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes Have you travelled outside the country in the last 4 weeks? No Symptoms: Do you have any trouble keeping your mouth shut? Yes. Are you feeling adequate respiratory distress or difficulty breathing? Yes Have you ever felt unable to breathe or speak for very short periods of time? Yes Is it difficult to hold your tongue in your mouth? Yes. Did you suddenly find it difficult or impossible to open your mouth, or did you get gum pain when you opened it? Yes.
+Diagnosis: Differential diagnosis is: Bronchitis, Pneumonia, Pulmonary embolism, Tuberculosis, Guillain-Barre syndrome, Bronchospasm / acute asthma exacerbation, Atrial fibrillation, Myocarditis, Acute dystonic reactions, Myasthenia gravis, Anemia, Chagas and the Disease can be Tuberculosis 
+Calling MEDICAL LLM (PHI)
+Combined text: Patient 's age 9, gender F Earlier: Have you taken any competing drugs in the last 7 days? Yes. Do you take stimulants regularly? Yes Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes Have you travelled outside the country in the last 4 weeks? No Symptoms: Do you have any trouble keeping your mouth shut? Yes. Are you feeling adequate respiratory distress or difficulty breathing? Yes Have you ever felt unable to breathe or speak for very short periods of time? Yes Is it difficult to hold your tongue in your mouth? Yes. Do you suddenly find it difficult or impossible to open your mouth, or do you get gum pain when you open it? Yes.
 ==((====))==  Unsloth 2024.11.11: Fast Llama patching. Transformers:4.46.3.
    \\   /|    GPU: NVIDIA A100 80GB PCIe. Max memory: 79.256 GB. Platform: Linux.
 O^O/ \_/ \    Torch: 2.5.1+cu124. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.1.0
 \        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
  "-____-"     Free Apache license: http://github.com/unslothai/unsloth
 Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
-Diagnosis (Unsloth): Differential Diagnosis is: Acute dystonic reactions, Myasthenia gravis, Pulmonary embolism, Anemia, Anaphylaxis, Scombroid food poisoning, Chagas and the Disease can be Acute dystonic reactions
-Calling MEDICAL LLM (Mistral)
-Combined text: Patient 's age 9, gender F Earlier: Have you taken any competing drugs in the last 7 days? Yes. Do you take stimulants regularly? Yes Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes Have you travelled outside the country in the last 4 weeks? No Symptoms: Do you have any trouble keeping your mouth shut? Yes. Are you feeling adequate respiratory distress or difficulty breathing? Yes Have you ever felt unable to breathe or speak for very short periods of time? Yes Is it difficult to hold your tongue in your mouth? Yes. Did you suddenly find it difficult or impossible to open your mouth, or did you get gum pain when you opened it? Yes.
-==((====))==  Unsloth 2024.11.11: Fast Mistral patching. Transformers:4.46.3.
-   \\   /|    GPU: NVIDIA A100 80GB PCIe. Max memory: 79.256 GB. Platform: Linux.
-O^O/ \_/ \    Torch: 2.5.1+cu124. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.1.0
-\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
- "-____-"     Free Apache license: http://github.com/unslothai/unsloth
-Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
-==((====))==  Unsloth 2024.11.11: Fast Mistral patching. Transformers:4.46.3.
-   \\   /|    GPU: NVIDIA A100 80GB PCIe. Max memory: 79.256 GB. Platform: Linux.
-O^O/ \_/ \    Torch: 2.5.1+cu124. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.1.0
-\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
- "-____-"     Free Apache license: http://github.com/unslothai/unsloth
-Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
-Diagnosis (Mistral): 2 diagnoses are likely: Acute dystonic reactions and Pulmonary embolism. The most likely is Acute dystonic reactions.
-
-    ### Explanation:
-    The patient is experiencing difficulty opening their mouth and has difficulty breathing. They also have a history of taking stimulants and have had an adverse reaction to a medication. The most likely diagnosis is Acute dystonic reactions.
-
-    The patient is experiencing difficulty opening their mouth and has difficulty breathing. They also have a history of taking stimulants and have had an adverse reaction to a medication. The most likely diagnosis is Acute dystonic reactions.
-
-    The patient is experiencing difficulty opening their mouth and has difficulty breathing. They also have a history of taking stimulants and have had an adverse reaction to a medication. The most likely diagnosis is Acute dystonic reactions.
-
-    The patient is experiencing difficulty opening their mouth and has difficulty
-Translating to Hindi
-translated data:  [['विभेदी निदान हैः वयोपिंग खांसी, ब्रोनिटिस, न्यूमोनिया और रोग वयोपिंग खांसी हो सकता है।'], ['विभेदी निदान हैः तीव्र डिस्टोनिक प्रतिक्रियाएं, मैस्टेनिया ग्रीस, फुफ्फुसीय एंमोलिज्म, एनीमिया, अनाफिलैक्सिस, स्कम्बोइड खाद्य विषाक्तता, चागस और रोग तीव्र डिस्टोनिक प्रतिक्रियाएं हो सकती हैं।'], ['2 निदान संभावित हैंः तीव्र डिस्टोनिक प्रतिक्रियाएं और फुफ्फुसीय उत्तेजना. सर्वाधिक संभावित है तीव्र डिस्टोनिक प्रतिक्रियाएं. ### स्पष्टीकरण: रोगी अपने मुंह खोलने में कठिनाई महसूस कर रहा है और सांस लेने में कठिनाई महसूस कर रहा है. उन्हें उत्तेजनाओं को लेने का इतिहास भी है और दवा के प्रति प्रति प्रतिकूल प्रभाव भी है. सर्वाधिक संभावित निदान तीव्र डिस्टोनिक प्रतिक्रियाएं है. रोगी अपने मुंह खोलने में कठिनाई महसूस कर रहा है और सांस लेने में कठिनाई महसूस कर रहा है. उन्हें उत्तेजनाओं को लेने का इतिहास भी है और दवा के प्रतिकूल प्रभाव भी है. सर्वाधिक संभावित निदान तीव्र डिस्टोनिक प्रतिक्रियाएं है. रोगी अपने मुंह खोलने में कठिनाई महसूस कर रहा है और सांस लेने में कठिनाई महसूस कर रहा है. उन्हें उत्तेजनाओं को लेने का इतिहास']]
+Diagnosis (Unsloth): Differential Diagnosis is: Acute dystonic reactions, Pulmonary embolism, Anaphylaxis, Scombroid food poisoning, SLE, Chagas and the Disease can be Acute dystonic reactions

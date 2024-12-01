@@ -60,7 +60,7 @@ def inference_mis(text:str, max_length:int = 256):
 {}"""
     model,tokenizer = load_model_mis()
     full_response, diagnosis_json = generate_text_mis(model,tokenizer,text,max_length,alpaca_prompt)
-    reutrn full_response, diagnosis_json
+    return full_response, diagnosis_json
 
 text = 'my head hurts'
 inference_mis(text,256)

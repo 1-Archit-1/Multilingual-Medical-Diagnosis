@@ -1,0 +1,210 @@
+0
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: Nausea, dermatitis, nodal dermatitis, dyschromic patch
+
+Ground truth:Fungal infection
+Diagnosis text Differential Diagnosis is: Scombroid food poisoning and the most likely is **Scombroid food poisoning**
+
+Diagnosis formatted {"most_likely": "Scombroid food poisoning", "differential": ["Scombroid food poisoning"]}
+
+Translated final output विभेदी निदान है: स्कम्बोइड खाद्य विषाक्तता और सर्वाधिक संभावना है
+
+
+1
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: Consistent breathing, shivering, chilling, taking water from the eyes
+
+Ground truth:Allergy
+Diagnosis text Differential Diagnosis is: Acute dystonic reactions and the most likely is **Acute dystonic reactions**
+
+Diagnosis formatted {"most_likely": "Acute dystonic reactions", "differential": ["Acute dystonic reactions"]}
+
+Translated final output विभेदीय निदान हैः तीव्र डिस्टोनिक प्रतिक्रियाएं और सर्वाधिक संभावित है
+
+
+2
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: abdominal pain, acidity, swelling of tongue, vomiting, coughing, chest pain
+
+Ground truth:GERD
+Diagnosis text Differential Diagnosis is: Bronchitis, Possible NSTEMI / STEMI, Boerhaave, GERD, Anaphylaxis, Pancreatic neoplasm, Panic attack, Chagas and the most likely is **Anaphylaxis**
+
+Diagnosis formatted {"most_likely": "Anaphylaxis", "differential": ["Bronchitis", "Possible NSTEMI / STEMI", "Boerhaave", "GERD", "Anaphylaxis", "Pancreatic neoplasm", "Panic attack", "Chagas"]}
+
+Translated final output विभेदी निदानः ब्रोनिटिस, संभावित NSTEMI/STEMI, बोरहाव, जे. ए. डी., अनाफाइलैक्सिस, पेंक्रेटिक न्यूप्लाज्म, भयावह दौरा, चागस और सर्वाधिक संभावित है
+
+
+3
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: abdominal pain, swelling on tongue, vomiting, coughing, chest pain
+
+Ground truth:GERD
+Diagnosis text Differential Diagnosis is: Bronchitis, Boerhaave, GERD, Acute laryngitis, Pancreatic neoplasm, Viral pharyngitis, Panic attack and the most likely is **Boerhaave**
+
+Diagnosis formatted {"most_likely": "Boerhaave", "differential": ["Bronchitis", "Boerhaave", "GERD", "Acute laryngitis", "Pancreatic neoplasm", "Viral pharyngitis", "Panic attack"]}
+
+Translated final output विभेदी निदान हैः ब्रोन्चिटिस, बोरहाव, जी. ए. डी., तीव्र लैरिंगाइटिस, यकृतीय नियोप्लाज्म, विषाणु फ़ारिंगाइटिस, घातक दौरा और सर्वाधिक संभावित है
+
+
+4
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: nausea, vomiting, yellowish_skin, loss_of_appetite, abdominal_pain, yellowing_of_eyes
+
+Ground truth:Chronic cholestasis
+Diagnosis text Differential Diagnosis is: Pancreatic neoplasm and the most likely is **Pancreatic neoplasm**
+
+Diagnosis formatted {"most_likely": "Pancreatic neoplasm", "differential": ["Pancreatic neoplasm"]}
+
+Translated final output विभेदी निदान हैः यकृत भ्रूण और सर्वाधिक संभावित है
+
+
+5
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: Nausea, skin rash, abdominal pain, burnt muscles, nausea
+
+Ground truth:Drug Reaction
+Diagnosis text Differential Diagnosis is: Scombroid food poisoning and the most likely is **Scombroid food poisoning**
+
+Diagnosis formatted {"most_likely": "Scombroid food poisoning", "differential": ["Scombroid food poisoning"]}
+
+Translated final output विभेदी निदान है: स्कम्बोइड खाद्य विषाक्तता और सर्वाधिक संभावना है
+
+
+6
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: vomiting, loss_of_appetite, abdominal_pain, passage_of_gases, internal_itching
+
+Ground truth:Peptic ulcer diseae
+Diagnosis text Differential Diagnosis is: GERD, Pancreatic neoplasm and the most likely is **Pancreatic neoplasm**
+
+Diagnosis formatted {"most_likely": "Pancreatic neoplasm", "differential": ["GERD", "Pancreatic neoplasm"]}
+
+Translated final output डिफेरिएल निदान हैः जी. ए. डी., पेन्क्रेटिक न्यूप्लाज्म और सबसे अधिक संभावित है
+
+
+7
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: Muscle decay, sore throat, high fever, extra marital contact
+
+Ground truth:AIDS
+Diagnosis text Differential Diagnosis is: HIV (initial infection), Chagas, URTI and the most likely is **HIV (initial infection)**
+
+Diagnosis formatted {"most_likely": "HIV (initial infection)", "differential": ["HIV (initial infection)", "Chagas", "URTI"]}
+
+Translated final output विभेदी निदान हैः एच. आई. वी. (प्राथमिक संक्रमण), चागस, उ. आर. टी. आई. और सर्वाधिक संभावित है
+
+
+8
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: fatigue, loss of weight, restlessness, drowsiness, abnormal intake of sugar, blurry and distorted vision, obesity, overeating, exacerbated hunger, hypertrophy
+
+Ground truth:Diabetes 
+Diagnosis text Differential Diagnosis is: Cushing’s syndrome, Anemia, Chagas and the most likely is **Cushing’s syndrome**
+
+Diagnosis formatted {"most_likely": "Cushing\u2019s syndrome", "differential": ["Cushing\u2019s syndrome", "Anemia", "Chagas"]}
+
+Translated final output विभेदी निदान है: क्यूशिंग सिंड्रोम, एनीमिया, चागस और सर्वाधिक संभावना है
+
+
+9
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: vomiting, sunken_ eyes, dehydration, diarrhoea
+
+Ground truth:Gastroenteritis
+Diagnosis text Differential Diagnosis is: Chagas and the most likely is **Chagas**
+
+Diagnosis formatted {"most_likely": "Chagas", "differential": ["Chagas"]}
+
+Translated final output विभेदी निदान हैः चागस और सर्वाधिक संभावना है
+
+
+10
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: fatigue, cough, high fever, nausea, family history, mucus
+
+Ground truth:Bronchial Asthma
+Diagnosis text Differential Diagnosis is: Bronchitis, Pneumonia, Tuberculosis, Influenza, Chagas and the most likely is **Tuberculosis**
+
+Diagnosis formatted {"most_likely": "Tuberculosis", "differential": ["Bronchitis", "Pneumonia", "Tuberculosis", "Influenza", "Chagas"]}
+
+Translated final output विभेदी निदानः ब्रोन्चिटिस, न्यूमोनिया, ट्युबरक्लूसिस, इन्फ्लुएंजा, चागास और सबसे अधिक संभावना है
+
+
+11
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: headache, chest pain, dizziness, loss of balance, lack of focus
+
+Ground truth:Hypertension 
+Diagnosis text Differential Diagnosis is: Cluster headache, Possible NSTEMI / STEMI, Anemia, Scombroid food poisoning and the most likely is **Scombroid food poisoning**
+
+Diagnosis formatted {"most_likely": "Scombroid food poisoning", "differential": ["Cluster headache", "Possible NSTEMI / STEMI", "Anemia", "Scombroid food poisoning"]}
+
+Translated final output विभेदी निदान है: Cluster सिर दर्द, संभावित NSTEMI/STEMI, एनीमिया, स्कम्बोइड खाद्य विषाक्तता और सबसे संभव है
+
+
+12
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: acidity, digestion, headache, blurry vision, excessive hunger, stiffness of the throat, depression, irritability, visual disorders
+
+Ground truth:Migraine
+Diagnosis text Differential Diagnosis is: Cluster headache, Anemia, Chagas and the most likely is **Chagas**
+
+Diagnosis formatted {"most_likely": "Chagas", "differential": ["Cluster headache", "Anemia", "Chagas"]}
+
+Translated final output विभेदी निदान है: Cluster headache, Anemia, Chagas और सबसे अधिक संभावना है है
+
+
+13
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: Digestion, headache, opaque visual impairment, excessive hunger, stiffness of the throat, depression, irritability, visual disorder
+
+Ground truth:Migraine
+Diagnosis text Differential Diagnosis is: Cluster headache, Anemia, Chagas and the most likely is **Chagas**
+
+Diagnosis formatted {"most_likely": "Chagas", "differential": ["Cluster headache", "Anemia", "Chagas"]}
+
+Translated final output विभेदी निदान है: Cluster headache, Anemia, Chagas और सबसे अधिक संभावना है है
+
+
+14
+
+Hindi Input: लक्षणः खुजली, चर्मशोथ, नोडल-चर्मशोथ, डिस्क्रोमिक पैच
+
+English Translation for Input: Symptoms: back pain, back pain, neck pain, dizziness, imbalance
+
+Ground truth:Cervical spondylosis
+Diagnosis text Differential Diagnosis is: Anemia, Scombroid food poisoning and the most likely is **Anemia**
+
+Diagnosis formatted {"most_likely": "Anemia", "differential": ["Anemia", "Scombroid food poisoning"]}
+
+Translated final output विभेदीय निदान हैः एनीमिया, स्कम्बोइड खाद्य विषाक्तता और सर्वाधिक संभावित है
+
+

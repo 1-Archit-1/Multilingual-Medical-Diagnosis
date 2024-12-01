@@ -60,33 +60,7 @@ def generate_diagnosis_phi(model, tokenizer, user_input):
     else:
         response = decoded_output.strip()
     
-    return format_diagnosis_output(response)
-
-def format_diagnosis_output(output_text):
-    """Convert model output text to structured JSON format"""
-    try:
-        # Extract disease and differential diagnoses using regex
-        disease_match = re.search(r"Disease can be (.*?)(?:\s|$)", output_text)
-        diff_match = re.search(r"Differential Diagnosis is: (.*?) and", output_text)
-        
-        most_likely = disease_match.group(1).strip() if disease_match else None
-        differential = []
-        
-        if diff_match:
-            differential = [d.strip() for d in diff_match.group(1).split(',')]
-        
-        # Create formatted output
-        formatted_output = [{
-            'most_likely': most_likely,
-            'differential': differential
-        }]
-        
-        return formatted_output
-    except Exception as e:
-        return [{
-            'most_likely': None,
-            'differential': []
-        }]
+    return response
 
 def main():
     model_path = "Buddy1421/medical-diagnosis-phi"

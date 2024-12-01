@@ -36,9 +36,9 @@ token=""
 print(os.environ['WANDB_DISABLED'])  # Should output "true"
 print(os.environ['HF_HOME'])  # Should output "~/scratch/
 
-#output_file = open('logger.log', 'w')
-#sys.stdout = output_file
-#sys.stderr = output_file
+output_file = open('logger.log', 'w')
+sys.stdout = output_file
+sys.stderr = output_file
 
 nltk.data.path.append('./nltk_data')
 nltk.download('all', download_dir='./nltk_data')
@@ -261,9 +261,7 @@ def filter_sentences(example):
     # Hook for further restrictions (can be customized)
     # Example: if 'specific_word' in example['translation']['en']:
     #     return False
-    
     return True
-
 
 def get_reduced_dataset(dataset_name, train_size=56000, val_size=8000, test_size=16000):
     orig_data_set = load_dataset(dataset_name)

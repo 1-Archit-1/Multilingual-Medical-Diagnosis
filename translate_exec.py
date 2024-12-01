@@ -14,9 +14,9 @@ token=""
 print(os.environ['WANDB_DISABLED'])  # Should output "true"
 print(os.environ['HF_HOME'])  # Should output "~/scratch/hf-cache"
 
-#output_file = open('logger_exec.log', 'w')
-#sys.stdout = output_file
-#sys.stderr = output_file
+output_file = open('logger_exec.log', 'w')
+sys.stdout = output_file
+sys.stderr = output_file
 
 LANG_TOKEN_MAPPING = {
     'hi': '',

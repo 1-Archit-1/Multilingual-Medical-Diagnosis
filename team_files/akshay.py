@@ -18,11 +18,11 @@ def load_model(path="asadhu8/llama_3.2_1b_ddx_plus_medical"):
 
 def unload_model(model, tokenizer):
     """Unload the model and clear memory."""
-    print("Unloading the model to save memory...")
+    #print("Unloading the model to save memory...")
     del model  # Delete the model object
     del tokenizer  # Delete the tokenizer object
     torch.cuda.empty_cache()  # Clear GPU memory
-    print("Model unloaded successfully!")
+    #print("Model unloaded successfully!")
 
 # Function to test prompts
 def generate_response(model, tokenizer, prompt, max_length=1024):
@@ -52,26 +52,25 @@ def format_output_for_voting(output_text):
 
 
         # Create formatted output
-        formatted_output = [{
+        formatted_output = {
             'most_likely': most_likely,
             'differential': differential
-        }]
+        }
 
         return formatted_output
     except Exception as e:
-        return [{
+        return {
             'most_likely': None,
             'differential': []
-        }]
+        }
 
 
 def getDiagnosisLlama(prompt, path="asadhu8/llama_3.2_1b_ddx_plus_medical_v2"):
     model, tokenizer = load_model(path)
     response = generate_response(model, tokenizer, prompt)
     output_match = re.search(r"Output:\s*(.*)", response, re.DOTALL)
-    print(output_match.group(1))
     unload_model(model, tokenizer)  # Unload the model to free memory
-    return format_output_for_voting(output_match.group(1))
+    return output_match.group(1), format_output_for_voting(output_match.group(1))
 
 
 if __name__ == '__main__':

@@ -76,17 +76,17 @@ def format_diagnosis_output(output_text):
             differential = [d.strip() for d in diff_match.group(1).split(',')]
         
         # Create formatted output
-        formatted_output = [{
+        formatted_output = {
             'most_likely': most_likely,
             'differential': differential
-        }]
+        }
         
         return formatted_output
     except Exception as e:
-        return [{
+        return {
             'most_likely': None,
             'differential': []
-        }]
+        }
 
 def main():
     model_path = "Buddy1421/medical-diagnosis-phi"

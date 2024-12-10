@@ -20,6 +20,7 @@ Archit Sengupta
 - rhaegar1O1/mistral-ddx-v2
 
 ## Repository Structure
+```
 .
 ├── .gitignore                          # Git ignore file to exclude specific files and directories
 ├── README.md                           # Repository documentation
@@ -53,7 +54,7 @@ Archit Sengupta
 ├── sample_data.json                    # Sample dataset in JSON format (english)
 ├── translated_sentences_hindi.json     # JSON file containing translated sentences in Hindi (input file)
 
-
+```
 ## Description
 
 ### Core Components

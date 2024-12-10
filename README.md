@@ -127,13 +127,13 @@ Archit Sengupta
 ### Translation Examples and Scores
 
 - **translation_examples_and_scores/**  
-  Stores examples of translations along with their evaluation scores.
+  Stores examples of translations along with their evaluation scores. (Please download the files to view)
   
   - **mbart_eng_hind_logs.log**  
-    Translation examples and scores for MBart model translating English to Hindi.
+    Translation examples and scores for MBart model translating English to Hindi (Please download the files to view).
     
   - **mbart_hindi_eng_logs.log**  
-    Translation examples and scores for MBart model translating Hindi to English.
+    Translation examples and scores for MBart model translating Hindi to English (Please download the files to view).
     
   - **mt_small_logs.log**  
     Translation examples and scores for mT5-small model in both translation directions.

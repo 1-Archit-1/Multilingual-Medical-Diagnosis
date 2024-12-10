@@ -3,14 +3,16 @@
 This repository contains code and resources for training and fine-tuning machine translation models using the Hugging Face Transformers library. The primary focus is on translating between English and Hindi using various models such as MBart and mT5. The medical diagnosis part uses mistral, phi and llama models.
 
 ## Team Members
+```
 Sathvik Karatattu Padmanabha
 Nithin Singhal
 Aditya Kumar
 Akshay Sadhu
 Archit Sengupta
+```
 
 ## Hugging Face Models
-
+```
 - sathvikaithalkp456/mt5_small_fine_tuned_eng_hindi
 - sathvikaithalkp456/mt5_small_fine_tuned_hindi_eng
 - sathvikaithalkp456/mbart_fine_tuned_eng_hin
@@ -18,7 +20,7 @@ Archit Sengupta
 - Buddy1421/medical_diagnosis_phi_3-5
 - asadhu8/llama_3.2_1b_ddx_plus_medical
 - rhaegar1O1/mistral-ddx-v2
-
+```
 ## Repository Structure
 ```
 .
@@ -38,19 +40,19 @@ Archit Sengupta
 │   └── ensemble.py                     # Ensemble logic 
 ├── medium_cases/                       # Directory for medium case execution
 │   ├── final_demo_notebook_version_medium.ipynb                  # Notebook version for medium case execution
-│   ├── *.json                  # Data files for medium case testing
-│   └── logger*.log                  # Log files for medium case testing
+│   ├── *.json                          # Data files for medium case testing
+│   └── logger*.log                     # Log files for medium case testing
 ├── translation_examples_and_scores/    # Directory for translation examples and their scores
-│   ├── mbart_eng_hind_logs.log                     # Translation examples for mbart English -> Hindi direction with scores
-│   ├── mbart_hindi_eng_logs.log                     # Translation examples for mbart Hindi -> Eng direction with scores
-│   └── mt_small_logs.log                     # Translation examples for mt5-small for both directions with scores
+│   ├── mbart_eng_hind_logs.log         # Translation examples for mbart English -> Hindi direction with scores
+│   ├── mbart_hindi_eng_logs.log        # Translation examples for mbart Hindi -> Eng direction with scores
+│   └── mt_small_logs.log               # Translation examples for mt5-small for both directions with scores
 ├── extra_stuff_do_not_delete/          # Directory for extra important files that should not be deleted
-│   ├── sample_validate_data_500.json               # 500 full end-to-end medical examples (english)
-│   └── anaconda                   # for PACE usage
+│   ├── sample_validate_data_500.json   # 500 full end-to-end medical examples (english)
+│   └── anaconda                        # for PACE usage
 ├── hard_cases/                         # Directory for hard case files
-│   ├── mis.txt              # Mistral hard case examples
-│   ├── phi.txt              # Phi hard case examples
-│   └── sample_hard_25.json              # Data for hard cases
+│   ├── mis.txt                         # Mistral hard case examples
+│   ├── phi.txt                         # Phi hard case examples
+│   └── sample_hard_25.json             # Data for hard cases
 ├── sample_data.json                    # Sample dataset in JSON format (english)
 ├── translated_sentences_hindi.json     # JSON file containing translated sentences in Hindi (input file)
 

@@ -12,6 +12,7 @@ Archit Sengupta
 ```
 
 ## Hugging Face Models
+After fine-tuning based on our datasets, we have uploaded our models to huggingface. You can pull these models directly and use it!
 ```
 - sathvikaithalkp456/mt5_small_fine_tuned_eng_hindi
 - sathvikaithalkp456/mt5_small_fine_tuned_hindi_eng

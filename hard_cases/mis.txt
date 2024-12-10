@@ -1,0 +1,165 @@
+0
+
+Symptoms: Nausea, dermatitis, nodal dermatitis, dyschromic patch
+
+Ground truth:Fungal infection
+Diagnosis text Differential Diagnosis is: Scombroid food poisoning and the most likely is **Scombroid food poisoning**
+
+
+Diagnosis formatted {"most_likely": "Scombroid food poisoning", "differential": ["Scombroid food poisoning"]}
+
+
+1
+
+Symptoms: Consistent breathing, shivering, chilling, taking water from the eyes
+
+Ground truth:Allergy
+Diagnosis text Differential Diagnosis is: Acute dystonic reactions and the most likely is **Acute dystonic reactions**
+
+
+Diagnosis formatted {"most_likely": "Acute dystonic reactions", "differential": ["Acute dystonic reactions"]}
+
+
+2
+
+Symptoms: abdominal pain, acidity, swelling of tongue, vomiting, coughing, chest pain
+
+Ground truth:GERD
+Diagnosis text Differential Diagnosis is: Bronchitis, Possible NSTEMI / STEMI, Boerhaave, GERD, Anaphylaxis, Pancreatic neoplasm, Panic attack, Chagas and the most likely is **Anaphylaxis**
+
+
+Diagnosis formatted {"most_likely": "Anaphylaxis", "differential": ["Bronchitis", "Possible NSTEMI / STEMI", "Boerhaave", "GERD", "Anaphylaxis", "Pancreatic neoplasm", "Panic attack", "Chagas"]}
+
+
+3
+
+Symptoms: abdominal pain, swelling on tongue, vomiting, coughing, chest pain
+
+Ground truth:GERD
+Diagnosis text Differential Diagnosis is: Bronchitis, Boerhaave, GERD, Acute laryngitis, Pancreatic neoplasm, Viral pharyngitis, Panic attack and the most likely is **Boerhaave**
+
+
+Diagnosis formatted {"most_likely": "Boerhaave", "differential": ["Bronchitis", "Boerhaave", "GERD", "Acute laryngitis", "Pancreatic neoplasm", "Viral pharyngitis", "Panic attack"]}
+
+
+4
+
+Symptoms: nausea, vomiting, yellowish_skin, loss_of_appetite, abdominal_pain, yellowing_of_eyes
+
+Ground truth:Chronic cholestasis
+Diagnosis text Differential Diagnosis is: Pancreatic neoplasm and the most likely is **Pancreatic neoplasm**
+
+
+Diagnosis formatted {"most_likely": "Pancreatic neoplasm", "differential": ["Pancreatic neoplasm"]}
+
+
+5
+
+Symptoms: Nausea, skin rash, abdominal pain, burnt muscles, nausea
+
+Ground truth:Drug Reaction
+Diagnosis text Differential Diagnosis is: Scombroid food poisoning and the most likely is **Scombroid food poisoning**
+
+
+Diagnosis formatted {"most_likely": "Scombroid food poisoning", "differential": ["Scombroid food poisoning"]}
+
+
+6
+
+Symptoms: vomiting, loss_of_appetite, abdominal_pain, passage_of_gases, internal_itching
+
+Ground truth:Peptic ulcer diseae
+Diagnosis text Differential Diagnosis is: GERD, Pancreatic neoplasm and the most likely is **Pancreatic neoplasm**
+
+
+Diagnosis formatted {"most_likely": "Pancreatic neoplasm", "differential": ["GERD", "Pancreatic neoplasm"]}
+
+
+7
+
+Symptoms: Muscle decay, sore throat, high fever, extra marital contact
+
+Ground truth:AIDS
+Diagnosis text Differential Diagnosis is: HIV (initial infection), Chagas, URTI and the most likely is **HIV (initial infection)**
+
+
+Diagnosis formatted {"most_likely": "HIV (initial infection)", "differential": ["HIV (initial infection)", "Chagas", "URTI"]}
+
+
+8
+
+Symptoms: fatigue, loss of weight, restlessness, drowsiness, abnormal intake of sugar, blurry and distorted vision, obesity, overeating, exacerbated hunger, hypertrophy
+
+Ground truth:Diabetes 
+Diagnosis text Differential Diagnosis is: Cushing’s syndrome, Anemia, Chagas and the most likely is **Cushing’s syndrome**
+
+
+Diagnosis formatted {"most_likely": "Cushing\u2019s syndrome", "differential": ["Cushing\u2019s syndrome", "Anemia", "Chagas"]}
+
+
+9
+
+Symptoms: vomiting, sunken_ eyes, dehydration, diarrhoea
+
+Ground truth:Gastroenteritis
+Diagnosis text Differential Diagnosis is: Chagas and the most likely is **Chagas**
+
+
+Diagnosis formatted {"most_likely": "Chagas", "differential": ["Chagas"]}
+
+
+10
+
+Symptoms: fatigue, cough, high fever, nausea, family history, mucus
+
+Ground truth:Bronchial Asthma
+Diagnosis text Differential Diagnosis is: Bronchitis, Pneumonia, Tuberculosis, Influenza, Chagas and the most likely is **Tuberculosis**
+
+
+Diagnosis formatted {"most_likely": "Tuberculosis", "differential": ["Bronchitis", "Pneumonia", "Tuberculosis", "Influenza", "Chagas"]}
+
+
+11
+
+Symptoms: headache, chest pain, dizziness, loss of balance, lack of focus
+
+Ground truth:Hypertension 
+Diagnosis text Differential Diagnosis is: Cluster headache, Possible NSTEMI / STEMI, Anemia, Scombroid food poisoning and the most likely is **Scombroid food poisoning**
+
+
+Diagnosis formatted {"most_likely": "Scombroid food poisoning", "differential": ["Cluster headache", "Possible NSTEMI / STEMI", "Anemia", "Scombroid food poisoning"]}
+
+
+12
+
+Symptoms: acidity, digestion, headache, blurry vision, excessive hunger, stiffness of the throat, depression, irritability, visual disorders
+
+Ground truth:Migraine
+Diagnosis text Differential Diagnosis is: Cluster headache, Anemia, Chagas and the most likely is **Chagas**
+
+
+Diagnosis formatted {"most_likely": "Chagas", "differential": ["Cluster headache", "Anemia", "Chagas"]}
+
+
+13
+
+Symptoms: Digestion, headache, opaque visual impairment, excessive hunger, stiffness of the throat, depression, irritability, visual disorder
+
+Ground truth:Migraine
+Diagnosis text Differential Diagnosis is: Cluster headache, Anemia, Chagas and the most likely is **Chagas**
+
+
+Diagnosis formatted {"most_likely": "Chagas", "differential": ["Cluster headache", "Anemia", "Chagas"]}
+
+
+14
+
+Symptoms: back pain, back pain, neck pain, dizziness, imbalance
+
+Ground truth:Cervical spondylosis
+Diagnosis text Differential Diagnosis is: Anemia, Scombroid food poisoning and the most likely is **Anemia**
+
+
+Diagnosis formatted {"most_likely": "Anemia", "differential": ["Anemia", "Scombroid food poisoning"]}
+
+

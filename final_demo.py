@@ -102,7 +102,7 @@ def get_mbart_hin_eng_huggingface(force_download=True):
 def get_mt5_small_eng_hin_huggingface(force_download=True):
 
     revision = "master"
-    model_path = 'sathvikaithalkp456/mbart_fine_tuned_eng_hin'
+    model_path = 'sathvikaithalkp456/mt5_small_fine_tuned_eng_hindi'
     tokenizer = AutoTokenizer.from_pretrained(model_path, force_download = force_download, revision=revision)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_path, force_download = force_download, revision=revision)
     model = model.cuda()
@@ -112,7 +112,7 @@ def get_mt5_small_eng_hin_huggingface(force_download=True):
 def get_mt5_small_hin_eng_huggingface(force_download=True):
 
     revision = "master"
-    model_path = 'sathvikaithalkp456/mbart_fine_tuned_hin_eng'
+    model_path = 'sathvikaithalkp456/mt5_small_fine_tuned_hindi_eng'
     tokenizer = AutoTokenizer.from_pretrained(model_path, force_download = force_download, revision=revision)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_path, force_download = force_download, revision=revision)
     model = model.cuda()

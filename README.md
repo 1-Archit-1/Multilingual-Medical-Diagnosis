@@ -197,6 +197,8 @@ Alternatively, use the interactive notebook:
 Open final_demo_notebook_version.ipynb in Jupyter Notebook or VS Code.
 Run each cell in the notebook. (Self explanatory)
 
+Note: The logs are stored in logger.log or logger_tests.log files by default if nothing appears on the terminal.
+
 ### Running individual models
 
 For translation for both mt5 and mbart models, you can edit the main function in the translate_exec.py file to choose the models, and run the translate_exec.py file. Set SHOULD_TRAIN = True for fine-tuning from scratch. For mbart, you can open the notebooks_working/perform_tests_notebook_version.ipynb file for a very simple code template to translate.

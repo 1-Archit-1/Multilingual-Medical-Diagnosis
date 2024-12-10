@@ -141,7 +141,6 @@ def mbart_hindi_eng():
     small_data_set = get_reduced_dataset(dataset_name, train_size = 112000, val_size=16000, test_size=32000)
     clock_end("data_preparation_2")
 
-
     clock_begin("translation_testing_untuned_2")
     test_data, tokenized_test_data = prepare_test_data(small_data_set, original_tokenizer, num_examples=100, src_lang='hi')
     translated_test_data_untuned = perform_translation_testing(original_model, original_tokenizer, test_data, tokenized_test_data, src_lang="hi_IN", tgt_lang="en_XX", model_type="mbart")
@@ -152,13 +151,11 @@ def mbart_hindi_eng():
     clock_end("translation_testing_untuned_2")
 
     last_print_time = time.time()
-
     tokenized_datasets = small_data_set.map(lambda examples: preprocess_function_mbart(examples, original_tokenizer, src_lang='hi', tgt_lang='en'), batched=True, remove_columns=["translation"])
 
     clock_begin("fine_tuning_2")
     if SHOULD_TRAIN == True:
         trainer = prepare_model_for_training_mbart(original_model, original_tokenizer, tokenized_datasets)
-
         fine_tune_and_save_mbart(trainer, original_model, original_tokenizer, output_dir=model_path+"./mbart_fine_tuned_hin_eng")
     clock_end("fine_tuning_2")
 
@@ -167,12 +164,9 @@ def mbart_hindi_eng():
     input_text = "कानून के नाम पर रुकें"
     translated_text = translate_text_mbart(model, tokenizer, input_text, src_lang='hi_IN', tgt_lang='en_XX')
 
-
     clock_begin("translation_testing_finetuned_2")
     test_data, tokenized_test_data = prepare_test_data(small_data_set, tokenizer, num_examples=100, src_lang='hi')
-
     translated_test_data = perform_translation_testing(model, tokenizer, test_data, tokenized_test_data, src_lang="hi_IN", tgt_lang="en_XX", model_type="mbart")
-
     evaluate_translations_bertscore(test_data, translated_test_data, src_lang='hi', tgt_lang='en', bert_lang='en')
     evaluate_translations_bleu(test_data, translated_test_data, tokenizer, src_lang='hi', tgt_lang='en')
     evaluate_translations_rouge(test_data, translated_test_data, tokenizer, src_lang='hi', tgt_lang

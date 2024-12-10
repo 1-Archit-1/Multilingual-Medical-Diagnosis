@@ -285,11 +285,23 @@ def parse_complete_test_data(data):
     #model, tokenizer = load_fine_tuned_model_mt5_small(model_path + './mt5_small_fine_tuned_hindi_eng')
 
 
+def translate_eng_hin_custom(input_text):
+    model, tokenizer = load_fine_tuned_model_mbart(model_path+"./mbart_fine_tuned_eng_hin")
+    print(f"Input: {input_text}")
+    translated_text = translate_text_mbart(model, tokenizer, input_text, src_lang='en_XX', tgt_lang='hi_IN')
+    print(f"Output: {translated_text}")
+
+def translate_hin_eng_custom(input_text):
+    model, tokenizer = load_fine_tuned_model_mbart(model_path+"./mbart_fine_tuned_hin_eng")
+    print(f"Input: {input_text}")
+    translated_text = translate_text_mbart(model, tokenizer, input_text, src_lang='hi_IN', tgt_lang='en_XX')
+    print(f"Output: {translated_text}")
+
 
 def main_2():
     """
     Main function to orchestrate fine-tuning and testing.
-    """
+    
     print("Running the dataset_desc function")
     #dataset_desc()
     print("Finished the dataset_desc function")
@@ -304,6 +316,14 @@ def main_2():
     #print(formatted_inputs)
     print("Finished the parse_complete_test_data function")
     test_example_2(formatted_inputs)
+    """
+
+    input_text = "Proper Nouns are difficult to translate : Sathvik Karatattu Padmanabha"
+    translate_eng_hin_custom(input_text)
+    print("\nGoing other way around\n")
+    input_text = "व्यक्तिवाचक संज्ञाओं का अनुवाद करना कठिन है: साथ्विक करतत्तु पद्मनाभ"
+    translate_hin_eng_custom(input_text) 
+
 
 
 if __name__ == "__main__":

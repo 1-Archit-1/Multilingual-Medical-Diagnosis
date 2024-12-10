@@ -1,15 +1,14 @@
 [
     [
-        "The age of the patient is 47, male",
-        "History: In the last year I had a flare - up of chronic obstructive respiratory disease (COPD) once or several times.",
-        "I smoke.",
-        "I have chronic obstructive pulmonary disease (COPD).",
-        "I was diagnosed with gastrosophage reflex.",
-        "I work in agriculture.",
-        "I work in the mining sector.",
-        "I have not been out of the country in the last four weeks.",
-        "Symptoms: When I breathe out, I hear the sound of breathing.",
-        "I felt adequate respiratory deficiency or difficulty breathing.",
-        "When I breathe out, I hear the sound of breathing."
+        "The age of the patient is 27.",
+        "Earlier: Have you taken any competing drugs in the last 7 days? Yes.",
+        "Have you been recently treated in hospital for nausea, irritation, vomiting or aggressive behaviour and received medication through an intravenous or intramuscular route? Yes",
+        "Have you travelled outside the country in the last 4 weeks? No",
+        "Symptoms: Can you control the direction of your eyes? Yes",
+        "Are you feeling adequate respiratory distress or difficulty breathing? Yes",
+        "Is it difficult to hold your tongue in your mouth? Yes.",
+        "Do you find it difficult to open or lift one or both eyes? Yes",
+        "Can 't you control the direction of your eyes? Yes",
+        "Was there any spasm of painful muscles in your face, neck or any other part of the body? Yes."
     ]
 ]

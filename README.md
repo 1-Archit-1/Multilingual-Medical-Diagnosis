@@ -170,6 +170,71 @@ Archit Sengupta
     Notebook for executing medium complexity demonstrations.
 
 
+## Project Deliverables 
+
+### Datasets Used
+
+#### For Translation
+
+Dataset link : https://huggingface.co/datasets/cfilt/iitb-english-hindi
+In code, we have used load_dataset function from huggingface to retrieve the data (1.6 M examples)
+
+After pre-processing, statistics:
+```
+Metric                       Train Set  Validation Set  Test Set
+Number of sentences          112,000    16,000          32,000
+Unique English words         110,275    34,846          53,661
+Unique Hindi words           102,865    30,877          47,761
+Avg. English sentence length 12.83      12.85           12.87
+Avg. Hindi sentence length   13.66      13.68           13.67
+Max sentence length          29         29              29
+Min sentence length          4          4               4
+```
+
+#### For Medical LLM Fine-Tuning
+
+Pull the dataset from https://github.com/mila-iqia/ddxplus
+```
+Dataset Size: 1.07M
+Training set: 500k
+Testing set: 18k samples
+
+The extra_stuff_do_not_delete/sample_validate_data_500.json contains 500 testing samples.
+The translated_sentences_hindi.json contains sample examples in hindi language
+```
+
+### Open Source URLs used: Python libraries (see the environment.yml file)
+```
+os
+sys
+time
+tqdm
+re
+numpy
+pandas
+matplotlib.pyplot
+seaborn
+datasets
+IPython
+ipywidgets
+torch
+pynvml
+transformers
+huggingface_hub
+nltk
+bert_score
+rouge_score
+unsloth
+```
+
+### Performance measurement tools (python libraries)
+```
+bert_score (for BERT Score)
+rouge_score (For ROUGE Scores)
+nltk (all other evaluation metrics)
+```
+
+
 
 ## Usage
 
